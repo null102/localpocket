@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="manifest.open_in_tab" content="true">
+  <title>LocalPocket / Settings</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1>
+      <img class="site-logo" src="/icon/96.png" alt="LocalPocket">
+      <span class="site-name">LocalPocket<span class="sep">/</span><span class="page">Settings</span></span>
+    </h1>
+  </header>
+
+  <article>
+    <section>
+      <h2>Folder</h2>
+      <label>
+        <span>Filename prefix</span>
+        <input id="folder" type="text" placeholder="localpocket">
+      </label>
+      <p class="hint">Exports will be named <code id="filename-preview">localpocket.json</code> / <code>localpocket.html</code>. Your browser will ask where to save them.</p>
+      <button id="save" class="primary">Save</button>
+      <span id="save-status" class="status"></span>
+    </section>
+
+    <section>
+      <h2>Export</h2>
+      <p>Download your bookmarks as plain files.</p>
+      <button id="export-json">Export JSON</button>
+      <button id="export-html">Export HTML</button>
+    </section>
+
+    <section>
+      <h2>Stats</h2>
+      <p><strong id="count">0</strong> bookmarks saved.</p>
+      <button id="clear" class="danger">Clear all</button>
+    </section>
+  </article>
+
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>

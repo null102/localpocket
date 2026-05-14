@@ -1,0 +1,119 @@
+:root {
+  --color-text:        #000;
+  --color-bg:          #fff;
+  --color-border:      #000;
+  --color-hover-bg:    #eee;
+  --color-code-bg:     #f5f5f5;
+  --font-family-body:  Helvetica, Verdana, Arial, 'Liberation Sans', FreeSans, sans-serif;
+  --font-family-mono:  Menlo, Consolas, 'Liberation Mono', monospace;
+  --font-body:    84%;
+  --font-banner:  1.9em;
+  --content-max-width: 70em;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: var(--font-family-body);
+  font-size: var(--font-body);
+  margin: 0;
+  padding: 0;
+}
+
+a { color: var(--color-text); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Banner */
+header { margin: 0; padding: 0; }
+header h1 {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--font-banner);
+  font-weight: normal;
+  margin: 0;
+  padding: 0.4ex 4mm;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.site-logo {
+  height: 1.6em;
+  width: auto;
+  display: block;
+}
+.site-name { font-weight: bold; }
+.site-name .sep { font-weight: normal; padding: 0 0.2em; }
+.site-name .page { font-weight: normal; }
+
+/* Article */
+article {
+  max-width: var(--content-max-width);
+  line-height: 1.5em;
+  padding: 0.5mm 5mm 5mm 5mm;
+}
+
+.meta-line {
+  margin: 1em 0;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--color-border);
+}
+.meta-line a { font-weight: bold; }
+
+ul#list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#list li {
+  padding: 1em 0;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+#list li:last-child { border-bottom: none; }
+
+.title {
+  font-weight: bold;
+  font-size: 1.15em;
+  display: inline-block;
+  margin-bottom: 0.25em;
+}
+.title:hover {
+  background-color: var(--color-hover-bg);
+  text-decoration: none;
+}
+
+.meta {
+  font-family: var(--font-family-mono);
+  font-size: 0.95em;
+}
+
+.excerpt {
+  margin: 0.4em 0 0;
+}
+
+.delete {
+  position: absolute;
+  top: 1em;
+  right: 0;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  cursor: pointer;
+  font: inherit;
+  padding: 0.1em 0.6em;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+#list li:hover .delete { opacity: 1; }
+.delete:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.empty {
+  text-align: center;
+  margin-top: 4em;
+}
